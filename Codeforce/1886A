@@ -1,4 +1,5 @@
 //https://codeforces.com/problemset/problem/1886/A
+/*
 A. Sum of Three
 time limit per test2 seconds
 memory limit per test256 megabytes
@@ -21,3 +22,23 @@ For each testcase, if there is no valid triplet 𝑥, 𝑦, and 𝑧, print NO o
 
 Otherwise, print YES on the first line. On the second line, print any valid triplet of distinct positive integers 𝑥, 𝑦, and 𝑧 such that 𝑥+𝑦+𝑧=𝑛, and none of the printed numbers are divisible by 3. 
 If there are multiple valid triplets, you can print any of them.
+*/
+#include <iostream>
+using namespace std;
+int main(){
+    long long int n;
+    cin >> n;
+    for(int i=0;i<n;i++){
+        long long int x;
+        cin >> x;
+        if(x<7 || x==9){
+            cout << "NO\n";
+            continue;
+        }
+        cout << "YES\n";
+        if(x%3==0)
+            cout << 1 << " " << 4 << " " << (x-5) << "\n";
+        else
+            cout << 1 << " " << 2 << " " << (x-3) << "\n";
+    }
+}
