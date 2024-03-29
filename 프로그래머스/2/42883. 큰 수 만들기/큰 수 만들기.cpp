@@ -5,18 +5,19 @@ using namespace std;
 
 string solution(string number, int k) {
     string answer = "";
-    int idx =0;
-    for(int i=0;i<number.size()-k;i++){
-        char maxN = number[idx];
-        int maxId = idx;
-        for(int j=idx;j<=k+i;j++){
-            if(maxN<number[j]){
-                maxN=number[j];
-                maxId = j;
-            }
+    int max =0;
+    int idx=0;
+    for(int i=0;i<number.length();i++){
+        if(max<number[i]){
+            max=number[i];
+            idx=i;
         }
-        idx = maxId + 1;
-        answer += maxN;
+        if(i==k){
+            i = idx;
+            ++k;
+            answer.push_back(max);
+            max=0;
+        }
     }
     return answer;
 }
