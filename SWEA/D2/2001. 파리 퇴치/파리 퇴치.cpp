@@ -28,7 +28,9 @@ int main(int argc, char** argv)
                     ans+=v[i+x][j+y];
                 }
             }
-            max_ans = max(ans,max_ans);
+            if(ans>max_ans){
+            	max_ans = ans;
+            }
             ans=0;
         }
         
